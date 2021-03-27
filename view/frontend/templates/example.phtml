@@ -1,0 +1,35 @@
+<div data-bind="scope: 'exampleTargetScope'">
+    Target text: <span data-bind="text: targetText">Placeholder in PHTML</span>
+</div>
+<script type="text/x-magento-init">
+    {
+        ".example4": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "exampleTargetScope": {
+                        "component": "Yireo_ExampleKnockoutViewModelLinking/js/example-target",
+                        "targetText": "Default text in JavaScript"
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+<div data-bind="scope: 'exampleInputScope'">
+    <input type="text" data-bind="textInput: exampleInput" />
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "exampleInputScope": {
+                        "component": "Yireo_ExampleKnockoutViewModelLinking/js/example-input",
+                        "targetName": "exampleTargetScope"
+                    }
+                }
+            }
+        }
+    }
+</script>
